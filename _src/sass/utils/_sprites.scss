@@ -1,0 +1,55 @@
+// ================================
+// Sprites
+// ================================
+
+// Individual variables
+$btn-border-green: -0px -138px 216px 66px;
+$btn-left: -216px -0px 14px 67px;
+$btn-right: -216px -67px 14px 67px;
+$button-big-hover: -0px -0px 216px 69px;
+$button-big-normal: -0px -69px 216px 69px;
+
+// Mixins
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 3)
+}
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 4)
+}
+
+// Functions
+@function sprite-width($sprite) {
+  @return nth($sprite, 3);
+}
+@function sprite-height($sprite) {
+  @return nth($sprite, 4);
+}
+
+// Positioning
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 1);
+  $sprite-offset-y: nth($sprite, 2);
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+// Sprite Mixin
+@mixin sprite($sprite, $display: block) {
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: $display;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// @extend these to pull in the background image
+.sprite-sample {
+    background-image: url('../images/sprites/sprite-sample.png');
+  }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 72dpi) {
+.sprite-sample {
+    background-image: url('../images/sprites/sprite-sample@2x.png');
+    background-size: 230px 204px;
+  }
+}
+

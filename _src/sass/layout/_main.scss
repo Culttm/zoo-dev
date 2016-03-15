@@ -1,0 +1,81 @@
+// ================================
+// Main
+// ================================
+.section-title{
+    text-align: center;
+    margin: 0 0 26px;
+}
+
+
+.load-more{
+    @include rem(font-size, 17px);
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 42px;
+
+
+    &__control{
+        color: setcolor(gray);
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        transition: color $timing-fast $cubic;
+
+        &:hover{
+            color: setcolor(green, base);
+        }
+
+        span{
+            display: inline-block;
+            vertical-align: top;
+            border-bottom: 1px dashed;
+            letter-spacing: -0.4px;
+            line-height: 1.1;
+        }
+
+        &:after{
+            display: inline-block;
+            vertical-align: top;
+            @include symbols(chevron-down);
+        }
+
+        &.js-close{
+            &:after{
+                @include symbols(chevron-up);
+            }
+        }
+    }
+}
+
+
+
+
+.js-append{
+    overflow: hidden;
+    transition: height .35s ease;
+}
+
+
+.medium-visible{
+    display: none;
+
+    @include mq('max-large'){
+        display: inline-block;
+    };    
+
+    @include mq('max-medium'){
+        display: none;
+    };
+}
+
+.medium-hidden{
+
+    @include mq('max-large'){
+        display: none;
+    };    
+
+    @include mq('max-medium'){
+        display: inline-block;
+    };
+
+}

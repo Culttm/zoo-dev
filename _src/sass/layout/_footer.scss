@@ -1,0 +1,101 @@
+// ================================
+// Footer
+// ================================
+
+.footer{
+	background-image: linear-gradient(to bottom, setcolor(green, dark), setcolor(green, base));
+	color: #f8f8f8;
+	text-align: center;
+	margin: 122px 0 0 0;
+	padding: 67px 0 30px 0;
+
+	.dsn-logo{
+		fill: #fff;
+		margin: 0 0 31px;
+	}
+
+	.foo-nav{
+		font-size: 14px;
+		font-weight: 300;
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			
+		}
+
+		li{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 11px 12px;
+		}
+
+		a{
+			text-decoration: none;
+			color: #c6e7e6;
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+
+	.copy{
+		max-width: 700px;
+		margin: 0 auto;
+		p{
+			color: #5cc8c1;
+			font-size: 13px;
+			margin: 0;
+		}
+	}
+
+	.foo-socials{
+		font-size: 26px;
+		margin: 20px 0;
+
+		a{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 10px;
+			color: #7cd4ce;
+			text-decoration: none;
+			transition: color .2s ease;
+
+			&:hover{
+				color: #c6e7e6;
+			}
+
+			&.facebook{
+				&:before{
+					 @include symbols(facebook);
+				}
+			}			
+
+			&.twitter{
+				&:before{
+					 @include symbols(twitter);
+				}
+			}			
+
+			&.odnoklassniki{
+				&:before{
+					  @include symbols(odnoklassniki);
+				}
+			}			
+
+			&.youtube{
+				&:before{
+					 @include symbols(youtube);
+				}
+			}			
+
+			&.instagram{
+				&:before{
+					 @include symbols(instagram);
+				}
+			}
+		}
+	}
+}

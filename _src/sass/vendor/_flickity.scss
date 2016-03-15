@@ -1,0 +1,16 @@
+// ================================
+// http://flickity.metafizzy.co
+// ================================
+
+.flickity-enabled:focus { outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

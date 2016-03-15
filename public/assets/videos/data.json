@@ -1,0 +1,32 @@
+[
+    {
+        "thumb": "assets/videos/3_preview.jpg",
+        "url": "https://www.youtube.com/embed/FmqriFx1Hb4?autoplay=1",
+        "time": "1:03",
+        "caption": "Зверополис - Добро пожаловать!"
+    },
+    {
+        "thumb": "assets/videos/4_preview.jpg",
+        "url": "https://www.youtube.com/embed/tdvzAVf-gYQ?autoplay=1",
+        "time": "1:02",
+        "caption": "Шакира - Try Everything"
+    },
+    {
+        "thumb": "assets/videos/5_preview.jpg",
+        "url": "https://www.youtube.com/embed/hSoV2d24kYQ?autoplay=1",
+        "time": "2:30",
+        "caption": "Зверополис - третий трейлер"
+    },
+    {
+        "thumb": "assets/videos/6_preview.jpg",
+        "url": "https://www.youtube.com/embed/oqFqf-1NcEc?autoplay=1",
+        "time": "2:32",
+        "caption": "Зверополис - второй трейлер"
+    },
+    {
+        "thumb": "assets/videos/7_preview.jpg",
+        "url": "https://www.youtube.com/embed/S-mhyd3M-UQ?autoplay=1",
+        "time": "1:37",
+        "caption": "Зверополис - первый трейлер в дубляже Николая Дроздова"
+    }
+]

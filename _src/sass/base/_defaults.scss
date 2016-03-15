@@ -1,0 +1,95 @@
+// ================================
+// Base & Typography Defaults
+// ================================
+
+// --------------------------------
+// Pseudo
+// --------------------------------
+// --------------------------------
+// General
+// --------------------------------
+
+html {
+	font-size: $html-font-size;
+}
+
+body {
+	@include setfont(default);
+	@include rem(font-size, $body-font-size);
+	@include font-smoothing;
+	background-image: url('../images/body-bg.jpg');
+	background-position: center 0;
+	background-repeat: repeat;
+	background-color: setcolor(white);
+	color: setcolor(black);
+	line-height: 1.2;
+}
+
+a {
+	color: #2C3E50;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		// color: setcolor(gray);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+
+// --------------------------------
+// Headlines
+// --------------------------------
+
+h1, .h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+	a {
+		color: setcolor(black);
+	}
+}
+
+
+h1, .h1{
+	@include setfont(roboto, bold);
+	@include rem(font-size, 30px);
+	text-transform: uppercase;
+	margin: 0 0 33px;
+}
+
+
+// --------------------------------
+// Text Components
+// --------------------------------
+
+p,
+dl,
+address {
+	@extend %type-medium;
+	margin: 0 0 22px;
+}
+
+p,
+li,
+dt,
+dd {
+	font-weight: normal;
+	font-style: normal;
+}
+
+li {
+	line-height: 1;
+}
+
+// --------------------------------
+// Extend WYSIWYG Styles
+// --------------------------------
+
+.wysiwyg {
+	@extend %wysiwyg;
+}

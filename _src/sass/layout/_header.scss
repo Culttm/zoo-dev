@@ -1,0 +1,35 @@
+// ================================
+// Header
+// ================================
+.header{
+    background-image: linear-gradient(to bottom, setcolor(green, dark), setcolor(green, base));
+    padding: 18px 0 16px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: z(header);
+
+    .container{
+        @include container($row-big);
+    }
+
+    .b-nav{
+        @include span(8 of 12);
+    }
+
+    .b-socials{
+        @include span(4 of 12 last);
+        text-align: right;
+    }
+
+    .share__init{
+        margin: -2px 0 -7px 0;
+    }
+
+
+    @include mq('max-medium'){
+       display: none;
+    }; 
+
+}

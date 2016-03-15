@@ -1,0 +1,94 @@
+// ================================
+// Fonts
+// ================================
+
+// --------------------------------
+// @font-face & @import
+// --------------------------------
+
+@font-face {
+    font-family: "RobotoCondensedRegular";
+    src: url("../fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot");
+    src: url("../fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoCondensedRegular/RobotoCondensedRegular.woff") format("woff"),
+    url("../fonts/RobotoCondensedRegular/RobotoCondensedRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "RobotoCondensedLight";
+    src: url("../fonts/RobotoCondensedLight/RobotoCondensedLight.eot");
+    src: url("../fonts/RobotoCondensedLight/RobotoCondensedLight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoCondensedLight/RobotoCondensedLight.woff") format("woff"),
+    url("../fonts/RobotoCondensedLight/RobotoCondensedLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "RobotoCondensedBold";
+    src: url("../fonts/RobotoCondensedBold/RobotoCondensedBold.eot");
+    src: url("../fonts/RobotoCondensedBold/RobotoCondensedBold.eot?#iefix")format("embedded-opentype"),
+    url("/fonts/RobotoCondensedBold/RobotoCondensedBold.woff") format("woff"),
+    url("/fonts/RobotoCondensedBold/RobotoCondensedBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+// --------------------------------
+// Font Variables
+// --------------------------------
+
+// Variables best utilized for font services without family grouping. font-family: 'Roboto', sans-serif;
+$font-regular: 'Roboto', sans-serif;
+$font-light: 'Roboto', sans-serif;
+$font-bold: 'Roboto', sans-serif;
+
+$rcd-regular: "RobotoCondensedRegular", sans-serif;
+$rcd-light: "RobotoCondensedLight", sans-serif;
+$rcd-bold: "RobotoCondensedBold", sans-serif;
+
+// --------------------------------
+// Font Function
+// --------------------------------
+
+// Font List Map
+$fonts: (
+	roboto: (
+		regular: $font-regular,
+		light: $font-light,
+		bold: $font-bold
+	),
+	cond: (
+		regular: $rcd-regular,
+		light: $rcd-light,
+		bold: $rcd-bold
+	)
+);
+
+// ex: font-family: setfont(fontone, light)
+// 1st value is your "Font List Map" font label
+// 2nd value is the style from "Font List Map" array
+
+@function setfont($name, $weight: regular) {
+	@if map-has-key($fonts, $name) {
+		@return map-get(map-get($fonts, $name), $weight);
+	} @else {
+		@warn "Couldn't find a font named `#{$name}`.";
+	}
+}
+
+
+// --------------------------------
+// Font Mixin
+// --------------------------------
+
+// ex: @include setfont(font-one, 400)
+// First value is your $family and second value is your weight
+
+@mixin setfont($family: sans-serif, $weight: normal) {
+	// Default Font Stack
+	@if $family == "default" {
+		font-family: 'Roboto', sans-serif;
+	}
+	font-weight: $weight;
+}

@@ -1,0 +1,111 @@
+.b-carousel{
+
+    &.is-draggable{
+
+        .flickity-viewport{
+
+            cursor: -webkit-grab;
+            cursor: grab;
+
+            &.is-pointer-down{
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
+            }
+        }
+        
+    }
+
+    &__item{
+        top: 0;
+        width: 100%;
+
+        img{
+            display: block;
+        }
+    }
+
+    .flickity-page-dots{
+        @extend %naked-list;
+        text-align: center;
+        font-size: 0;
+        padding: 9px 0;
+
+        .dot{
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            border: 1px solid setcolor(green, base);
+            border-radius: 100%;
+            margin: 0 5px;
+            transition: background $timing-fast $cubic;
+            cursor: pointer;
+
+            &:hover, &.is-selected{
+                background: setcolor(green, base);
+            }
+        }
+    }
+
+    .flickity-prev-next-button{
+        @extend %naked-button;
+        @include rem(font-size, 60px);
+        @include opacity(1);
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: -6px;
+        color: setcolor(green, base);
+        transition: all $timing-fast $cubic;
+
+        &:hover{
+            color: setcolor(green, dark);
+        }
+
+        &[disabled]{
+            @include opacity(0);
+        }
+
+        svg{
+            display: none;
+        }
+
+        &:before{
+            display: block;
+        }
+
+
+        &.previous{
+            left: -68px;
+
+            &:before{
+                @include symbols(chevron-left);
+            }
+
+            @include mq(1140px, max) {
+                left: 10px;
+            };
+        }
+        &.next{
+            right: -68px;
+
+            &:before{
+                @include symbols(chevron-right);
+            }
+
+            @include mq(1140px, max) {
+                right: 10px;
+            };
+        }
+
+
+
+    }
+
+
+    @include mq(1140px, max) {
+        margin-left: -20px;
+        margin-right: -20px;
+    };
+}

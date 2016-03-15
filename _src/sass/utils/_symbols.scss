@@ -1,0 +1,101 @@
+// ================================
+// Symbols
+// ================================
+
+@font-face {
+	font-family: "symbols";
+	src: url('../symbols\/\symbols.eot');
+	src: url('../symbols\/\symbols.eot?#iefix') format('eot'),
+		url('../symbols\/\symbols.woff') format('woff'),
+		url('../symbols\/\symbols.ttf') format('truetype'),
+		url('../symbols\/\symbols.svg#symbols') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Symbols placeholder to extend inside the mixin.
+%symbols {
+	font-family: "symbols";
+	width: 1em;
+	margin: 0;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	line-height: 1em;
+	speak: none;
+}
+
+// Styles applied to the .symbol class when adding symbols to the markup.
+.symbol:before {
+	font-family: "symbols";
+	width: 1em;
+	margin: 0;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	line-height: 1em;
+	speak: none;
+}
+
+// Mixin to add in your own symbol through the css.
+// The mixin only works with :pseudo
+@mixin symbols($symbol: false) {
+	@extend %symbols;
+
+	@if $symbol == "chevron-down" {
+		content: '\E001';
+	}
+	@if $symbol == "chevron-left" {
+		content: '\E002';
+	}
+	@if $symbol == "chevron-right" {
+		content: '\E003';
+	}
+	@if $symbol == "chevron-up" {
+		content: '\E004';
+	}
+	@if $symbol == "cross" {
+		content: '\E005';
+	}
+	@if $symbol == "facebook" {
+		content: '\E006';
+	}
+	@if $symbol == "instagram" {
+		content: '\E007';
+	}
+	@if $symbol == "location" {
+		content: '\E008';
+	}
+	@if $symbol == "odnoklassniki" {
+		content: '\E009';
+	}
+	@if $symbol == "play" {
+		content: '\E00A';
+	}
+	@if $symbol == "twitter" {
+		content: '\E00B';
+	}
+	@if $symbol == "youtube" {
+		content: '\E00C';
+	}
+}
+
+// Individual CSS styles for when you call by the class name in markup.
+.s-chevron-down:before { content: "\E001" }
+.s-chevron-left:before { content: "\E002" }
+.s-chevron-right:before { content: "\E003" }
+.s-chevron-up:before { content: "\E004" }
+.s-cross:before { content: "\E005" }
+.s-facebook:before { content: "\E006" }
+.s-instagram:before { content: "\E007" }
+.s-location:before { content: "\E008" }
+.s-odnoklassniki:before { content: "\E009" }
+.s-play:before { content: "\E00A" }
+.s-twitter:before { content: "\E00B" }
+.s-youtube:before { content: "\E00C" }

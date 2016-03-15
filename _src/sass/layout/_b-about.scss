@@ -1,0 +1,117 @@
+.b-about{
+    padding: 75px 0 0;
+    margin-bottom: 64px;
+
+    @include mq('max-medium'){
+       background: #7c61ad;
+       padding: 20px 0;
+       color: #fff;
+    }; 
+
+
+    &__poster{
+        @include span(3.5 of 12);
+
+        img{
+            margin-bottom: 20px;
+        }
+
+        @include mq('max-medium'){
+            display: none;
+        }; 
+
+    }
+
+    &__data{
+        @include span(8.5 of 12 last);
+
+        @include mq('max-medium'){
+            @include span(12 of 12);
+
+            .btn{
+                display: block;
+                margin: 0 auto;
+                background: none;
+                border-top: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+                color: #fff;
+                padding: 16px 15px 19px;
+                height: 64px;
+
+                &:before, &:after{
+                    @extend .sprite-sample;
+                    display: block;
+                    position: absolute;
+                    top: -4px;
+                    content: '';
+                }
+
+                &:before{
+                    @include sprite($btn-left);
+                    left: -2px;
+                }                
+
+                &:after{
+                    @include sprite($btn-right);
+                    right: -2px;
+                }
+            }
+        }; 
+
+
+        .title{
+            display: none;
+            margin-bottom: 20px;
+
+            @include mq('max-medium'){
+                display: block;
+            }; 
+
+            @include mq(480px, max) {
+                display: none;
+            };
+
+
+        }
+
+        &__inner{
+            position: relative;
+            padding: 11px 0 0 0;
+            max-width: 775px;
+        }
+    }
+}
+
+
+.b-features{
+    @extend %naked-list;
+    margin-bottom: 41px;
+
+    &__item{
+
+        margin: 0 0 8px;
+
+        &__left, &__right{
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        &__left{
+            width: 22%;
+
+            @include mq('max-medium'){
+               width: 49%;
+            }; 
+
+        }
+        &__right{
+            width: 77%;
+            @include mq('max-medium'){
+               width: 49%;
+            }; 
+
+        }
+
+    }
+
+}

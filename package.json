@@ -1,0 +1,36 @@
+{
+  "name": "animalcity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "browserify-ejs": "0.0.2",
+    "browserify-shim": "^3.8.12",
+    "gulp": "^3.9.0",
+    "gulp-eta": "^0.5.4"
+  },
+  "browser": {
+    "waitFor": "./_src\\js\\lib\\waitFor.js",
+    "fancybox": "./bower_components\\fancybox\\source\\jquery.fancybox.js"
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "flickity": "^1.1.2",
+    "flickity-as-nav-for": "^1.0.2",
+    "flickity-imagesloaded": "^1.0.2",
+    "jquery": "^2.2.0",
+    "jquery-bridget": "^2.0.0",
+    "mobile-detect": "^1.3.1",
+    "promise-polyfill": "^3.1.0",
+    "sassqwatch": "^0.7.4"
+  }
+}

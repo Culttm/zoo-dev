@@ -1,0 +1,39 @@
+.b-socials{
+
+    &__link{
+        @include rem(font-size, 19px);
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0 0 0 20px;
+        color: #ccf0ed;
+        transition: color $timing-fast $cubic;
+        cursor: pointer;
+
+        &:hover{
+            color: setcolor(white);
+        }
+
+        &:first-child{
+            margin-left: 0;
+        }
+
+        &--fb{
+            &:before{
+                @include symbols(facebook);
+            }
+        }
+
+        &--ok{
+            &:before{
+                @include symbols(odnoklassniki);
+            }
+        }
+
+        &--tw{
+            &:before{
+                @include symbols(twitter);
+            }
+        }
+    }
+}

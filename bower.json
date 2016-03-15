@@ -1,0 +1,21 @@
+{
+  "name": "animalcity",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Culttm <culttm@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fancybox": "~2.1.5"
+  }
+}

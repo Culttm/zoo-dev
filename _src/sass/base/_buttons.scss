@@ -1,0 +1,58 @@
+.btn{
+    @extend %naked-button;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    &--type-1{
+        @extend .sprite-sample;
+        @include sprite($button-big-normal);
+        @include rem(font-size, 24px);
+        line-height: sprite-height($button-big-normal);
+        display: inline-block;
+        vertical-align: top;
+        font-family: setfont(cond, bold);
+        color: setcolor(white);
+        text-transform: uppercase;
+        transition: color $timing-fast $cubic;
+
+
+        &:before{
+            @extend .sprite-sample;
+            @include sprite($button-big-hover);
+            @include opacity(0);
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: opacity $timing-fast $cubic;
+        }
+
+        &:hover{
+            &:before{
+                @include opacity(1);
+                transition: opacity $timing-fast $cubic;
+            }
+        }
+
+        span{
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+    }
+
+
+    &--type-2{
+        @extend .sprite-sample;
+        @include sprite($btn-border-green);
+        @include rem(font-size, 24px);
+        color: setcolor(green, base);
+        text-transform: uppercase;
+        font-family: setfont(cond, light);
+        letter-spacing: -0.6px;
+        padding: 19px 15px 19px;
+    }
+}

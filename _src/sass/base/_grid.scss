@@ -1,0 +1,15 @@
+html, body{
+    height: 100%;
+}
+
+.global{
+    min-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.container{
+    @include container($row-def);
+    padding: 0 $gutter;
+
+}
